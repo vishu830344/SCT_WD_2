@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantum Scientific Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <div class="calculator-container">
+    <div class="calculator">
+      <div class="display">
+        <div class="previous-operand" id="previous-operand"></div>
+        <div class="current-operand" id="current-operand">0</div>
+      </div>
+
+      <div class="buttons-grid">
+        <button class="btn function-btn" data-operation="sin">sin</button>
+        <button class="btn function-btn" data-operation="cos">cos</button>
+        <button class="btn function-btn" data-operation="tan">tan</button>
+<button class="btn function-btn" data-operation="10^x">10^x</button>
+        <button class="angle-toggle">DEG</button>
+
+         <button class="btn function-btn" data-operation="x³">x³</button>
+        <button class="btn function-btn" data-operation="1/x">1/x</button>
+         <button class="btn function-btn" data-operation="x²">x²</button>
+        <button class="btn function-btn" data-operation="log">log</button>
+        <button class="btn function-btn" data-operation="ln">ln</button>
+<button class="btn red-btn" data-operation="AC">AC</button>
+<button class="btn red-btn" data-operation="DEL">DEL</button>
+
+        <button class="btn function-btn" data-operation="0">0</button>
+        <button class="btn function-btn" data-operation="^">x^y</button>
+        <button class="btn function-btn" data-operation="!">x!</button>
+
+        <button class="btn clear-btn" data-number="9">9</button>
+        <button class="btn delete-btn" data-number="8">8</button>
+
+        <button class="btn number-btn" data-number="7">7</button>
+        <button class="btn operator-btn" data-operation="√">√</button>
+        <button class="btn operator-btn" data-operation="e">e</button>
+
+
+        <button class="btn number-btn" data-number="6">6</button>
+        <button class="btn number-btn" data-number="5">5</button>
+        <button class="btn number-btn" data-number="4">4</button>
+        <button class="btn operator-btn" data-operation="-">-</button>
+
+                <button class="btn operator-btn" data-operation="+">+</button>
+        <button class="btn number-btn" data-number="3">3</button>
+        <button class="btn number-btn" data-number="2">2</button>
+
+           <button class="btn number-btn" data-number="1">1</button>
+
+        <button class="btn operator-btn" data-operation="×">×</button>
+
+ <button class="btn operator-btn" data-operation="÷">÷</button>
+ 
+        <button class="btn number-btn" data-number="%">%</button>
+        <button class="btn number-btn" data-number=".">.</button>
+        <button class="btn number-btn" data-number="0">0</button>
+        <button class="btn equals-btn" data-operation="=">=</button>
+      </div>
+
+      <div class="mode-toggle">
+        <span class="mode-icon"><i class="fas fa-sun"></i></span>
+        <span class="mode-text">Light Mode</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

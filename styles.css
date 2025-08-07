@@ -1,0 +1,241 @@
+/* Premium Gradient Theme: Deep Blue, Orange-Gold & Glassy White */
+:root {
+  --primary-color: #ff6f00;         /* Premium orange */
+  --secondary-color: #f57c00;       /* Vibrant deep orange */
+  --accent-color: #ffe0b2;          /* Soft amber */
+  --dark-bg: #080c09;               /* Rich dark background */
+  --light-bg: #b1e5f2;              /* Almost white */
+  --display-dark: #2d2222;          /* Darker display panel */
+  --display-light: #aba6a6;         /* White in light mode */
+  --text-dark: #ffffff;             /* White text */
+  --text-light: #1c1c1c;            /* Near-black text */
+  --btn-dark: #2a2a2a;              /* Premium button grey */
+  --btn-light: #f5f5f5;             /* Light mode buttons */
+  --operator-dark: #3c3c3c;         /* Slightly lighter grey */
+  --operator-light: #e0e0e0;        /* Light mode operator */
+  --special-orange: #ff6f00;        /* Custom orange for % and operators */
+  --equal-red: #d32f2f;             /* Red for = button */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s;
+}
+
+body {
+  background: linear-gradient(to bottom, #1a1a1a, #121212);
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.calculator {
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.display {
+  padding: 20px;
+  text-align: right;
+  background: var(--display-dark);
+  position: relative;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.display::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--accent-color));
+}
+
+.previous-operand {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.5);
+  min-height: 24px;
+  margin-bottom: 6px;
+  word-break: break-word;
+}
+
+.current-operand {
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: var(--text-dark);
+  word-break: break-word;
+}
+
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  padding: 20px;
+}
+
+.btn {
+  height: 60px;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: var(--btn-dark);
+  color: var(--text-dark);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(255, 111, 0, 0.3);
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.number-btn {
+  background: var(--btn-dark);
+}
+
+.operator-btn {
+  background: var(--special-orange);
+  color: white;
+  font-weight: bold;
+}
+
+.function-btn {
+  background: var(--operator-dark);
+  color: var(--accent-color);
+  font-size: 1rem;
+}
+
+.equals-btn {
+  background: var(--equal-red);
+  color: white;
+  grid-column: span 2;
+  font-weight: bold;
+}
+
+.red-btn {
+  background: #c62828;
+  color: white;
+  font-weight: bold;
+}
+
+/* Highlight root and e buttons as normal number buttons */
+button[data-operation="√"],
+button[data-operation="e"] {
+  background: var(--btn-dark);
+  color: var(--text-dark);
+}
+
+/* Style % button with orange */
+button[data-number="%"] {
+  background: var(--special-orange);
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.mode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.mode-icon {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+.mode-text {
+  font-size: 0.9rem;
+}
+
+/* Light mode styles */
+.light-mode {
+  background: var(--light-bg);
+  color: var(--text-light);
+}
+
+.light-mode .calculator {
+  background: white;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .display {
+  background: var(--display-light);
+  color: var(--text-light);
+}
+
+.light-mode .previous-operand {
+  color: rgba(33, 33, 33, 0.5);
+}
+
+.light-mode .btn {
+  background: var(--btn-light);
+  color: var(--text-light);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .operator-btn {
+  background: var(--special-orange);
+  color: white;
+}
+
+.light-mode .equals-btn {
+  background: var(--equal-red);
+  color: white;
+}
+
+.light-mode .function-btn {
+  background: var(--operator-light);
+  color: var(--secondary-color);
+}
+
+@media (max-width: 480px) {
+  .calculator-container {
+    padding: 10px;
+  }
+
+  .buttons-grid {
+    gap: 8px;
+    padding: 15px;
+  }
+
+  .btn {
+    height: 50px;
+    font-size: 1rem;
+  }
+
+  .function-btn {
+    font-size: 0.8rem;
+  }
+
+  .current-operand {
+    font-size: 2rem;
+  }
+}
